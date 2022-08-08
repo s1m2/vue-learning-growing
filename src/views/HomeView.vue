@@ -1,8 +1,22 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, reactive, watch } from "vue";
 
 const count = ref(0);
 const joke = ref("");
+
+// const state = reactive({ count: 0 });
+
+// watch(
+//   () => state.count,
+//   async () => {
+//     const res = await fetch("https://icanhazdadjoke.com/", {
+//       headers: {
+//         Accept: "application/json",
+//       },
+//     });
+//     joke.value = (await res.json()).joke;
+//   }
+// );
 
 watch(count, async () => {
   const res = await fetch("https://icanhazdadjoke.com/", {
