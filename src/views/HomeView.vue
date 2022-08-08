@@ -1,10 +1,16 @@
-<script setup></script>
+<script setup>
+import ParentComponent from "@/components/ParentComponent.vue";
+import { provide } from "vue";
+
+provide("message", "It's peanut butter jelly time");
+</script>
 
 <template>
   <main>
-    <h1>Welcome to our Vue 3 Essentials Intro</h1>
-    <p>Sit down and enjoy the ride</p>
-    <p>I'll be your cpatian today so look at me</p>
+    <h1>Provide &amp; Inject</h1>
+    <p>I want to pass data to my grand child</p>
+
+    <ParentComponent />
   </main>
 </template>
 
