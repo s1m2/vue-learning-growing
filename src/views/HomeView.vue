@@ -1,10 +1,23 @@
-<script setup></script>
+<script setup>
+import { defineAsyncComponent, ref } from "vue";
+// import LoginComponent from "@/components/LoginComponent.vue";
+
+const LoginPopup = defineAsyncComponent(() =>
+  import("./../components/LoginComponent.vue")
+);
+
+const showPopup = ref(false);
+</script>
 
 <template>
   <main>
-    <h1>Welcome to our Vue 3 Essentials Intro</h1>
-    <p>Sit down and enjoy the ride</p>
-    <p>I'll be your captain today so look at me</p>
+    <h1>Async Components</h1>
+
+    <!-- <LoginComponent v-if="showPopup" /> -->
+
+    <LoginPopup v-if="showPopup" />
+    <br />
+    <button @click="() => (showPopup = true)">Show Popup</button>
   </main>
 </template>
 
