@@ -1,90 +1,50 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
+<script setup></script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <h1>Introduction to Vue 3</h1>
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
   </header>
 
-  <RouterView />
+  <section>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia alias
+      aliquam modi unde dolor voluptates sed laboriosam minima perspiciatis,
+      accusantium dolore. Sunt amet, tempora laboriosam obcaecati accusantium
+      aliquid cumque! Voluptatibus. Quas culpa doloribus sit mollitia est dolor
+      debitis tempora quos nobis! Aperiam qui a repudiandae fuga temporibus
+      asperiores iure doloribus distinctio repellendus eius! Odit saepe sit
+      fugit quaerat, labore id! Exercitationem tempora eum eius deserunt?
+      Ratione, tenetur facere? Vero corporis iure explicabo praesentium,
+      deserunt fuga quidem iusto saepe reprehenderit quae, quis eos est. Vel
+      obcaecati atque cupiditate, magni dolor illo. Nemo eos, veritatis
+      recusandae, tempore fugiat voluptates dolor, nulla possimus molestias
+      quasi accusamus earum a alias fuga dignissimos excepturi quas expedita
+      porro numquam blanditiis enim ratione. Tempore eum perferendis ea.
+      Officia, eum modi. Quia commodi quis voluptatibus? Laboriosam minus, fuga
+      nesciunt nemo veritatis labore ullam repellat molestias voluptatem numquam
+      tempora, quod ea incidunt ex vitae dignissimos aperiam! Odio, nihil
+      excepturi!
+    </p>
+  </section>
+
+  <footer>
+    <p>The footer content should go here</p>
+  </footer>
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  margin-bottom: 30px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header nav a {
+  margin-right: 20px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+section {
+  height: 50vh;
 }
 </style>
