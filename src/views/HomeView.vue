@@ -1,4 +1,13 @@
 <script setup>
+import { onMounted, onUnmounted } from "vue";
+
+onMounted(() => {
+  console.log("This component has been mounted");
+});
+
+onUnmounted(() => {
+  console.log("This component has been unmounted");
+});
 </script>
 
 <template>
