@@ -1,10 +1,10 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watchEffect } from "vue";
 
 const count = ref(0);
 const joke = ref("");
 
-watch(count, async () => {
+watchEffect(async () => {
   const res = await fetch("https://icanhazdadjoke.com/", {
     headers: {
       Accept: "application/json",
@@ -20,8 +20,8 @@ function requestJoke() {
 
 <template>
   <main>
-    <h1>Watchers</h1>
-    <p>Click the burron to request a dad joke</p>
+    <h1>Watch Effect</h1>
+    <p>Click the button to request a dad joke</p>
     <button @click="requestJoke">Request Joke</button>
 
     <blockquote>
