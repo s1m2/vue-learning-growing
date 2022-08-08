@@ -1,8 +1,9 @@
 <script setup>
+import Counter from "./../components/Counter.vue";
 </script>
 
 <template>
   <main>
-    <h1>This is an awesome place to be</h1>
+    <Counter />
   </main>
 </template>
