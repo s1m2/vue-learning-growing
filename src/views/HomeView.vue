@@ -1,11 +1,33 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showNotification = ref(false);
+</script>
 
 <template>
   <main>
-    <h1>Welcome to our Vue 3 Essentials Intro</h1>
-    <p>Sit down and enjoy the ride</p>
-    <p>I'll be your captain today so look at me</p>
+    <Transition>
+      <p v-if="showNotification">
+        This is a notification message....mmhhh....kinda
+      </p>
+    </Transition>
+    <br />
+    <h1>Transitions</h1>
+    <br />
+    <button @click="() => (showNotification = !showNotification)">
+      Toggle notification
+    </button>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
