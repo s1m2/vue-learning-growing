@@ -6,13 +6,16 @@ const showNotification = ref(false);
 
 <template>
   <main>
-    <Transition>
+    <transition
+      enter-active-class="animated fadeIn zoomIn"
+      leave-active-class="animated fadeOut zoomOut"
+    >
       <p v-if="showNotification">
         This is a notification message....mmhhh....kinda
       </p>
-    </Transition>
+    </transition>
     <br />
-    <h1>Transitions</h1>
+    <h1>Transitions with third party lib</h1>
     <br />
     <button @click="() => (showNotification = !showNotification)">
       Toggle notification
