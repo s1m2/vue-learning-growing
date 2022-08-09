@@ -1,11 +1,37 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showModal = ref(false);
+</script>
 
 <template>
   <main>
-    <h1>Welcome to our Vue 3 Essentials Intro</h1>
-    <p>Sit down and enjoy the ride</p>
-    <p>I'll be your captain today so look at me</p>
+    <h1>Teleport</h1>
+    <br />
+
+    <button @click="() => (showModal = true)">Open Modal</button>
+
+    <Teleport to="body">
+      <div class="modal" v-if="showModal">
+        <p>Look at me. I'm a modal</p>
+        <button @click="() => (showModal = false)">Hide Modal</button>
+      </div>
+    </Teleport>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #696969;
+  background-color: hsl(0, 100%, 100%);
+}
+</style>
