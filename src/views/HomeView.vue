@@ -1,16 +1,18 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 
-const count = ref(0);
+const count = ref(1);
 const joke = ref("");
 
 watchEffect(async () => {
-  const res = await fetch("https://icanhazdadjoke.com/", {
-    headers: {
-      Accept: "application/json",
-    },
-  });
-  joke.value = (await res.json()).joke;
+  if (count.value) {
+    const res = await fetch("https://icanhazdadjoke.com/", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    joke.value = (await res.json()).joke;
+  }
 });
 
 function requestJoke() {
